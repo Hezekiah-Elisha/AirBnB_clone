@@ -77,8 +77,7 @@ class TestBaseModel(unittest.TestCase):
         created_at = datetime.now()
         instance1 = Amenity()
         updated_at = datetime.now()
-        self.assertEqual(created_at <= instance1.created_at
-                         <= updated_at, True)
+        self.assertEqual(created_at <= instance1.created_at <= updated_at, True)
         time.sleep(1)
         created_at = datetime.now()
         instance2 = Amenity()

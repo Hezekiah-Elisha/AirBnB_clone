@@ -6,8 +6,9 @@ from uuid import uuid4
 from datetime import datetime
 import models
 
-#dfm = date format
+# dfm = date format
 dfm = "%Y-%m-%dT%H:%M:%S.%f"
+
 
 class BaseModel:
     """Base Model"""
@@ -29,7 +30,9 @@ class BaseModel:
 
     def __str__(self):
         """str representation"""
-        return "[{:s}] ({:s}) {}".format(self.__class__.__name__, self.id, self.__dict__)
+        s_dict = self.__dict__
+        s_id = self.id
+        return "[{:s}] ({:s}) {}".format(self.__class__.__name__, s_id, s_dict)
 
     def save(self):
         """"""
