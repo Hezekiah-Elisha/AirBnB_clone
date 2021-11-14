@@ -15,7 +15,9 @@ allowed_class = {"BaseModel": BaseModel, "Place": Place, "State": State,
                  "City": City, "Amenity": Amenity, "Review": Review,
                  "User": User}
 
+
 class HBNBCommand(cmd.Cmd):
+
     intro = 'Welcome to the AirBnB clone. Type help or ? to list commands. \n'
     prompt = '(hbnb) '
     file = None
@@ -34,12 +36,10 @@ class HBNBCommand(cmd.Cmd):
             except Exception as f:
                 print("** class doesn't exist **")
 
-
     def do_EOF(self, arg):
         'Check if it is End-Of-File: EOF'
         # something to be done here
         return True
-
 
     def do_quit(self, arg):
         'close the Airbnb window, and exit:  EXIT'
@@ -50,8 +50,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_show(self, arg):
         """Prints the string representation of an instance
-            based on the class name and id.
-            Ex: $ show BaseModel 1234-1234-1234."""
+            based on the class name and id."""
         cmd_line = arg.split()
         if len(cmd_line) == 0:
             print("** class name missing **")
@@ -69,8 +68,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_destroy(self, arg):
         """Deletes an instance based on the class name and
-        id (save the change into the JSON file).
-        Ex: $ destroy BaseModel 1234-1234-1234"""
+        id (save the change into the JSON file)."""
         cmd_line = arg.split()
         if len(cmd_line) == 0:
             print("** class name missing **")
@@ -89,8 +87,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_all(self, arg):
         """Prints all string representation of all instances
-            based or not on the class name.
-            Ex: $ all BaseModel or $ all."""
+            based or not on the class name."""
         cmd_line = arg.split()
         if len(cmd_line) == 0 or cmd_line[0] == "BaseModel":
             print('["', end="")
@@ -120,13 +117,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_update(self, line):
         """Updates an instance based on the class name and id
-            by adding or updating attribute
-            (save the change into the JSON file).
-            - Usage:
-            update <class name> <id> <attribute name> "<attribute value>"
-            - Ex:
-            $ update BaseModel 1234-1234-1234 email "aibnb@holbertonschool.com"
-            - Only one attribute can be updated at the time"""
+            by adding or updating attribute"""
         cmd_line = line.split()
         untouchable = ["id", "created_at", "updated_at"]
         objets = models.storage.all()
