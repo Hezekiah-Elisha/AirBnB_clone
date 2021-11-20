@@ -1,0 +1,17 @@
+footer{
+  background-color: white;
+  height: 70px;
+  width: 100%;
+  border-top: solid 1px #CCCCCC;
+  position: fixed;
+  bottom: 0;
+  /* text-align: center;
+  margin: 0 auto; */
+  display: flex;
+  flex-direction: row;
+}
+footer span{
+  text-align: center;
+  flex: 1 100%;
+  padding: 1.5rem;
+}
